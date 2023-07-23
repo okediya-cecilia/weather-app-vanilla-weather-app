@@ -59,6 +59,7 @@ function handleSubmit(event){
 }
 
 search("Lagos");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
