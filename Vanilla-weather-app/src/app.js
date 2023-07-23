@@ -44,13 +44,23 @@ function displayTemperature(response){
     );
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-
-
+function search(city){
 let apiKey = "f2a3c6239a67b0f60f690bbe099331c9";
-let city = "Lagos";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lagos,Nigeria&appid=${apiKey}&units=metric`;
-
-console.log(apiUrl);
-
 axios.get(apiUrl).then(displayTemperature);
+}
+
+
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+search("Lagos");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit",handleSubmit);
+
+
+
