@@ -46,7 +46,7 @@ function displayTemperature(response){
 }
 function search(city){
 let apiKey = "f2a3c6239a67b0f60f690bbe099331c9";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lagos,Nigeria&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -58,10 +58,10 @@ function handleSubmit(event){
     search(cityInputElement.value);
 }
 
-search("Lagos");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
+
 
 
 
